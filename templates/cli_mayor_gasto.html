@@ -1,0 +1,21 @@
+{% extends "base_welcome.html" %}
+
+{% block title %}Clientes que más $ gastaron{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Lista de clientes y su gasto total</h1>
+	<table border=1 cellpadding=7>
+    <tr>
+      <th>CLIENTE</th>
+      <th>TOTAL</th>
+    </tr>
+    {% for key,value in cli_gasto.iterrows() %}
+      <tr>
+        <td>{{ value['CLIENTE'] }}</td>
+        <<td>{{ value['TOTAL'] }}</td>
+        </tr>
+    {% endfor %}  
+  </table>
+</div>
+{% endblock %}

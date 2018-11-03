@@ -1,0 +1,18 @@
+{% extends "base_welcome.html" %}
+{% block title %}Prueba{% endblock %}
+
+{% block page_content %}
+<div class="page-header">    
+    {% if checkeo == 0 %}
+<h1>Su archivo no funciona por los siguientes errores:</h1>
+	<h3> {{largo}} </h3> 
+	<h3> {{archivo_exist}} </h3>
+	<h3> {{codigo_precio}} </h3>
+	<h3> {{codigo_blank}} </h3>
+	<h3> {{codigo_int}} </h3>
+	<h3> {{codigo_code}} </h3>
+{% else %}
+<h1> El archivo funciona bien, utilice las pestañas correspondientes para realizar las consultas </h1>
+{% endif %}
+</div>
+{% endblock %}

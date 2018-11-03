@@ -1,0 +1,28 @@
+{% extends "base_welcome.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Clientes {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+	<h1> {{ wtf.quick_form(form) }} </h1>
+    <h1>Lista de productos comprados por X cliente</h1>
+	<table border=1 cellpadding=7>
+    <tr>
+		<th>CODIGO</th>
+      <th>PRODUCTO</th>
+      <th>CLIENTE</th>
+	  <th>CANTIDAD</th>
+	  
+    </tr>
+    {% for key,value in prod_cli.iterrows() %}
+      <tr>
+		<td>{{ value['CODIGO'] }}</td>
+        <td>{{ value['PRODUCTO'] }}</td>
+        <td>{{ value['CLIENTE'] }}</td>
+		<td>{{ value['CANTIDAD'] }}</td>
+        </tr>
+    {% endfor %}  
+  </table>
+</div>
+{% endblock %}

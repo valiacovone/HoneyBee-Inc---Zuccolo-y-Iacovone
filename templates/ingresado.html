@@ -1,0 +1,39 @@
+{% extends "base_welcome.html" %}
+
+{% block title %}Bienvenido!!{% endblock %}
+
+{% block page_content %}
+<div class="page-header">    
+    <h4>Usted se ha logueado correctamente. </h4>
+	<h1> Bienvenido al sistema de Honeybee Inc! </h1>
+	<div class="page-header">    
+    {% if checkeo == 1 %}
+	<h4> Puede utilizar las pestañas para realizar consultas particulares </h4>
+	<h3> Ventas totales: </h3>
+	<table border=1 cellpadding=7>
+    <tr>
+      <th>CODIGO</th>
+      <th>PRODUCTO</th>
+      <th>CLIENTE</th>
+      <th>CANTIDAD</th>
+	  <th>PRECIO</th>
+    </tr>
+    {% for obj in lista %}
+      <tr>
+        <td>{{ obj['CODIGO'] }}</a></td>
+        <td>{{ obj['PRODUCTO'] }}</td>
+        <td>{{ obj['CLIENTE'] }}</td>
+        <td>{{ obj['CANTIDAD'] }}</td>
+        <td>{{ obj['PRECIO'] }}</td>
+      </tr>
+    {% endfor %}  
+	</table>
+  
+	{% else %}
+	<h1> El archivo es incorrecto. Dirijase a la ventana de 'Validaciones' para ver porque ocurre esto. </h1>
+	<h2> Le recordamos que si no ingresa un archivo correcto, las consultas no funcionarán.</h2>
+	{% endif %}
+	</div>
+</div>
+{% endblock %}
+

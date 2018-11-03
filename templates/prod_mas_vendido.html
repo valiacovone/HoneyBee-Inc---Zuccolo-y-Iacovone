@@ -1,0 +1,23 @@
+{% extends "base_welcome.html" %}
+
+{% block title %}Productos más vendidos{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Lista de productos más vendidos</h1>
+	<table border=1 cellpadding=7>
+    <tr>
+      <th>PRODUCTO</th>
+      <th>CANTIDAD</th>
+    </tr>
+    {% for key,value in prod_vend.iterrows() %}
+      <tr>
+        <td>{{ value['PRODUCTO'] }}</td>
+        <<td>{{ value['CANTIDAD'] }}</td>
+        </tr>
+    {% endfor %}  
+  </table>
+</div>
+{% endblock %}
+
+
